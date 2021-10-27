@@ -1,0 +1,34 @@
+%main
+  %aside.wrapper-note
+    .box-search.bg-dark
+      %span
+        %input{ placeholder: 'search note'}
+        %i.fas.fa-search
+    .box-note-list.bg-light
+      = render 'notes'
+      = render 'notes'
+      = render 'notes'
+      = render 'notes'
+      .box-footer
+        .nav{'arial-label': 'Page navigation'}
+          %ul.pagination
+            %li.page-item
+              = link_to '#', class: 'page-link' do
+                %span{'aria-hidden': 'true'} &laquo;
+            %li.page-item
+              = link_to '#', class: 'page-link' do
+                %span 1
+            %li.page-item
+              = link_to '#', class: 'page-link' do
+                %span 2
+            %li.page-item
+              = link_to '#', class: 'page-link' do
+                %span 3
+            %li.page-item
+              = link_to '#', class: 'page-link' do
+                %span 5
+            %li.page-item
+              = link_to '#', class: 'page-link' do
+                %span{'aria-hidden': 'true'} &raquo;
+  %article.wrapper-content
+    Página Home
