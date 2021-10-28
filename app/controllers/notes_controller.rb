@@ -10,11 +10,11 @@ class NotesController < ApplicationController
   def edit; end
 
   def new
-    @note = Note.new
+    @note = current_user.notes.build
   end
 
   def create
-    @note = Note.new(params_note)
+    @note = current_user.notes.build(params_note)
     if @note.save
       redirect_to @note
     else
@@ -38,7 +38,7 @@ class NotesController < ApplicationController
   private
 
   def set_note
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
   end
 
   def params_note
@@ -46,7 +46,7 @@ class NotesController < ApplicationController
   end
 
   def set_search
-    @q = Note.ransack(params[:q])
+    @q = current_user.notes.ransack(params[:q])
     @notes = @q.result(distinct: true).order(created_at: :desc).page(params[:page])
   end
 

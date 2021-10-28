@@ -13,6 +13,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'ransack'
+gem 'devise'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 

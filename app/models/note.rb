@@ -1,5 +1,7 @@
 class Note < ApplicationRecord
 
+  belongs_to :user
+
   enum priority: %i[low media high], _default: :low
 
   validates :title, presence: true
