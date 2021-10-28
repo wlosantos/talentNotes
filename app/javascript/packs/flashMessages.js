@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Toastify({
       text: message,
-      duration: 3000,
+      duration: 4000,
       close: true,
       backgroundColor: backgroundColors[type],
       stopOnFocus: true,

@@ -1,0 +1,21 @@
+.devise_form
+
+  %h3.mb-4.d-flex.aling-item-center.justify-content-center
+    %i.fas.fa-pencil-ruler.text-info.mr-3
+    %span.text-muted{style: 'font-size: 1.4rem'} talentNotes
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-group
+      = f.label :email
+      = f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email"
+    .form-group
+      = f.label :password
+      = f.password_field :password, class: 'form-control', autocomplete: "current-password"
+    - if devise_mapping.rememberable?
+      -# .field
+      -#   = f.check_box :remember_me
+      -#   = f.label :remember_me
+    .form-group.mb-3
+      = f.submit "Entrar", class: 'btn btn-info btn-lg btn-block'
+  %div.has-text-centered.mt-3
+    = link_to 'Novo Usuário', new_user_registration_path, class: 'nav-link'
