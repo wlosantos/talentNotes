@@ -14,5 +14,5 @@
 
 <hr />
 
-![](/home/wendellopes/Imagens/talentNotes.png)
+![](https://github.com/wlosantos/talentNotes/blob/master/app/assets/images/talentNotes.png)
 
