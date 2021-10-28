@@ -1,24 +1,18 @@
-# README
+## <small>::</small> talentNotes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<hr />
 
-Things you may want to cover:
+​	O talentNotes é um projeto de notas onde o usuário, devidamente authenticado, irá armazenar suas idéias e anotações através desse simples aplicatico, Entre as suas caractéríscas esta a possiblidade de criar prioridade para cada anotação, que pode ser alteradas dinamicamente a qualquer momento, assim como um sistema de pesquisa baseada em qualquer palavra, seja do título o na descrição da anotação. Este projeto é o resultado de um teste realizado durante o processo de seleção, onde destaco todas as tecnologias utilizadas.
 
-* Ruby version
+<ul>
+	<li>Ruby on Rails</li>
+    <li>Bootstrap</li>
+    <li>Sass</li>
+    <li>Stimulus JS</li>
+    <li>Postgresql</li>
+</ul>
 
-* System dependencies
+<hr />
 
-* Configuration
+![](/home/wendellopes/Imagens/talentNotes.png)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
