@@ -1,0 +1,24 @@
+- notes.each do |note|
+  .card.shadow-sm
+    = link_to note, class: 'link-note' do
+      .card-body
+        .note-wrapper
+          %span.icon.text-light{class: "#{note.priority_color}"}
+            %i.fas.fa-pen-nib
+          .note-title
+            %div #{ truncate(note.title, length: 30) }
+            %span.text-muted
+              criado em 
+              %span
+                #{ note.published.strftime("%d/%m/%Y")}
+        .note-content.text-muted
+          %span #{truncate(note.content, length: 80)}
+
+    .card-footer.drop-priority
+      %span.mr-2 Prioridade:
+      .dropdown
+        %button.btn.btn-sm.btn-primary.dropdown-toggle{class: "#{note.priority_color}", type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-exapanded': 'false'}
+          #{ note.priority }
+        .dropdown-menu
+          - Note.priorities.each do |p|
+            %a.dropdown-item{href: '#', 'data-reflex': 'click->PriorityReflex#change', 'data-id': "#{note.id}", 'data-priority': "#{p[0]}"} #{p[0]}

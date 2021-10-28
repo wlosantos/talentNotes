@@ -1,11 +1,13 @@
-import Rails from "@rails/ujs"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
-import "packs/custom"
+import Rails from "@rails/ujs";
+import * as ActiveStorage from "@rails/activestorage";
+import "channels";
+import "./flashMessages";
 
-Rails.start()
-ActiveStorage.start()
+Rails.start();
+ActiveStorage.start();
 
-import 'bulma/bulma'
+import "bootstrap/dist/js/bootstrap.bundle";
 import "@fortawesome/fontawesome-free/js/all";
-import '../src/application.scss'
+import "../src/application.scss";
+
+import "controllers";

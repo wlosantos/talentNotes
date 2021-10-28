@@ -1,0 +1,25 @@
+.devise_form
+  %h3.mb-4.d-flex.aling-item-center.justify-content-center
+    %i.fas.fa-pencil-ruler.text-info.mr-3
+    %span.text-muted{style: 'font-size: 1.4rem'} talentNotes
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    -# %small.has-text-grey
+      = render "devise/shared/error_messages", resource: resource
+
+    .form-group
+      = f.label :email
+      = f.email_field :email, class: 'form-control', autocomplete: "email"
+
+    .form-group
+      = f.label :password, 'Senha'
+      = f.password_field :password, class: 'form-control', autocomplete: "new-password"
+
+    .form-group
+      = f.label :password_confirmation, 'Confirmar Senha'
+      = f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password"
+
+    .form-group
+      = f.submit "Cadastrar", class: 'btn btn-info btn-lg btn-block'
+  %div.text-center.mt-3
+    = render "devise/shared/links"

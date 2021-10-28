@@ -1,0 +1,9 @@
+%aside.wrapper-note
+  .box-search.bg-dark
+    %span
+      = render 'search_notes'
+  .box-note-list.bg-light
+    = render 'notes', notes: @notes
+
+    .box-footer
+      = paginate @notes

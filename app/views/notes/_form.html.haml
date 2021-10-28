@@ -1,0 +1,17 @@
+= form_with model: @note, local: true do |form|
+
+  .form-group.d-flex.justify-content-end
+    %span.mr-3= form.label :priority, 'Prioridade:'
+    = form.select :priority, Note.priorities.keys, class: 'form-control'
+
+  .form-group
+    = form.label :title, 'Título:'
+    = form.text_field :title, class: 'form-control'
+
+  .form-group
+    = form.label :content, 'Descrição:'
+    = form.text_area :content, class: 'form-control', rows: '10'
+
+
+  .form-group{style: 'text-align: right'}
+    = form.submit 'Enviar', class: 'btn btn-info'

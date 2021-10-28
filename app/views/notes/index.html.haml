@@ -1,0 +1,16 @@
+%main
+  = render 'listnotes'
+
+  %article.wrapper-content
+    .content-home
+      .content-banner.mb-5
+        .logo.mb-2
+          %i.fas.fa-pencil-ruler.text-info
+          %span.text-muted talentNotes
+        %h3.mb-0 Mantenhas suas anotações, idéias, pensamentos bem guardados e organizadas por níveis de prioridade!
+      .content-add-note
+        = link_to new_note_path, class: 'btn btn-outline-info btn-lg' do
+          %i.fas.fa-plus
+          %span.ml-3 Nova Nota
+    
+    = render 'shared/footer'

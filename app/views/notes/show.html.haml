@@ -1,0 +1,27 @@
+%main
+  = render 'listnotes'
+
+  %article.wrapper-content
+    .show-content
+      .header-show
+        .header-show-title
+          %h2.mb-0 #{ @note.title }
+          %div.text-muted criado em #{ @note.published.strftime('%d/%m/%Y') }
+          .select-priority.d-flex.align-items-center
+            .drop-priority
+              %small.mr-2 prioridade: 
+              .dropdown
+                %button.btn.btn-sm.btn-primary.dropdown-toggle{class: "#{@note.priority_color}", type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-exapanded': 'false'}
+                  #{ @note.priority }
+                .dropdown-menu
+                  - Note.priorities.each do |p|
+                    %a.dropdown-item{href: '#', 'data-reflex': 'click->PriorityReflex#change', 'data-id': "#{@note.id}", 'data-priority': "#{p[0]}"} #{p[0]}
+            
+        .header-show-button
+          = link_to 'Editar', edit_note_path(@note), class: 'btn btn-info btn-sm'
+          = link_to 'Excluir', note_path(@note), method: :delete, data: { confirm: 'Tem certeza?'}, class: 'btn btn-danger btn-sm'
+
+      .body-show{style: 'padding: 0 2rem; line-height: 32px;'}
+        #{ @note.content }
+
+    = render 'shared/footer'

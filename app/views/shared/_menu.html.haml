@@ -1,0 +1,19 @@
+%nav.navbar.navbar-expand-lg.navbar-light
+  .container-fluid
+    =link_to root_path, class: 'navbar-brand mb-0 h1' do
+      %i.fas.fa-pencil-ruler.text-info
+      %span.text-muted talentNotes
+    %button.navbar-toggler{ 'type' => 'button', 'data-toggle' => 'modal', 'data-target' => '#menuPrincipal' }
+      %span.navbar-toggler-icon
+
+    #menuPrincipal.navbar-collapse.collapse
+      %ul.navbar-nav.ml-auto
+        - if user_signed_in?
+          %li.navbar-item
+            = link_to new_note_path, class: 'btn btn-info' do
+              %i.fas.fa-plus
+              %span.ml-2 nova nota
+          %li.navbar-item
+            = link_to destroy_user_session_path, method: :delete, class: 'nav-link ml-3' do
+              %span.mr-2 sair
+              %i.fas.fa-sign-out-alt

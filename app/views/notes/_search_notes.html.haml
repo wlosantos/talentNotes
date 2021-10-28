@@ -1,0 +1,4 @@
+= search_form_for @q do |f|
+  = f.search_field :title_or_content_cont, placeholder: 'pesquisar...'
+  = f.button class: 'btn btn-danger' do
+    %i.fas.fa-search

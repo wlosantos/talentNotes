@@ -1,0 +1,15 @@
+%main
+  = render 'listnotes'
+
+  %article.wrapper-content
+    .show-content
+      .header-show
+        .header-show-title
+          %h2.mb-0
+            %i.fas.fa-grip-vertical.text-muted{ style: 'font-size: 1.4rem; padding-bottom: 8px'} 
+            %span Criar Nova Nota
+
+      .body-show
+        = render 'form'
+
+    = render 'shared/footer'

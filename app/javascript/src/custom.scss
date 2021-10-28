@@ -1,0 +1,21 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drop-priority {
+  font-size: .8rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
+  button {
+    width: 80px;
+    border: none;
+  }
+
+  .dropdown-menu {
+    padding: 0px;
+  }
+}
