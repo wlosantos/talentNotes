@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :notes, only: %i[ index show ]
+  resources :notes
 
   root 'notes#index'
 end
