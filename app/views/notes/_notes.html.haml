@@ -1,0 +1,32 @@
+- notes.each do |note|
+  .card.shadow-sm
+    = link_to note, class: 'link-note' do
+      .card-body
+        .note-wrapper
+          %span.icon.bg-info.text-light
+            %i.fas.fa-paperclip
+          .note-title
+            %div #{ truncate(note.title, length: 30) }
+            %span.text-muted
+              created on 
+              %span
+                #{ note.published.strftime("%d/%m/%Y")}
+        .note-content.text-muted
+          %span #{truncate(note.content, length: 80)}
+
+    .card-footer
+      %span Priority:
+      %select{class: "#{note.badge_color(note.priority)}"}
+        - if note.priority === 'low'
+          %option{value: 'low', selected: true} baixa
+          %option media
+          %option alta
+        - elsif note.priority === 'media'
+          %option baixa
+          %option{value: 'media', selected: true} media
+          %option alta
+        - else
+          %option baixa
+          %option media
+          %option{value: 'high', selected: true} alta
+
