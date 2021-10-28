@@ -1,7 +1,8 @@
 class NotesController < ApplicationController
 
   def index
-    @notes = Note.page(params[:page])
+    @q = Note.ransack(params[:q])
+    @notes = @q.result(distinct: true).order(created_at: :desc).page(params[:page])
   end
 
 end
