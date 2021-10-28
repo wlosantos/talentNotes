@@ -2,7 +2,7 @@ class Note < ApplicationRecord
 
   belongs_to :user
 
-  enum priority: %i[low media high], _default: :low
+  enum priority: %i[baixa media alta], _default: :baixa
 
   validates :title, presence: true
   validates :content, presence: true
@@ -11,7 +11,7 @@ class Note < ApplicationRecord
 
   def priority_color
     case priority
-    when 'low'
+    when 'baixa'
       'bg-secondary'
     when 'media'
       'bg-info'
