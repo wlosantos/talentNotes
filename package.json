@@ -12,6 +12,7 @@
     "popper.js": "^1.16.1",
     "stimulus": "^3.0.1",
     "stimulus_reflex": "3.4.1",
+    "toastify-js": "^1.11.2",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },

@@ -16,23 +16,28 @@ class NotesController < ApplicationController
   def create
     @note = current_user.notes.build(params_note)
     if @note.save
-      redirect_to @note
+      redirect_to @note, notice: 'Nota criada com sucesso!!!'
     else
+      flash.now[:alert] = 'Todos os campos são obrigatórios!!!'
       render :new
     end
   end
 
   def update
     if @note.update(params_note)
-      redirect_to @note
+      redirect_to @note, notice: 'Nota atualizada com sucesso!!!'
     else
+      flash.now[:alert] = 'Todos os campos são obrigatórios!!!'
       render :edit
     end
   end
 
   def destroy
-    @note.destroy
-    redirect_to root_path
+    if @note.destroy
+      redirect_to root_path, notice: 'Nota excluida com sucesso!!!'
+    else
+      redirect_to @note, alert: 'Erro ao excluir!!!'
+    end
   end
 
   private
