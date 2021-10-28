@@ -7,6 +7,17 @@ class Note < ApplicationRecord
 
   before_validation :date_published
 
+  def badge_color(selected)
+    case selected
+    when 'low'
+      'bg-secondary'
+    when 'media'
+      'bg-info'
+    else
+      'bg-danger'
+    end
+  end
+
   private
 
   def date_published
