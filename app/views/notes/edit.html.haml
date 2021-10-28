@@ -1,0 +1,12 @@
+%main
+  = render 'listnotes'
+
+  %article.wrapper-content
+    .show-content
+      .header-show
+        .header-show-title
+          %h2.mb-0 Editar Nota
+      .body-show
+        = render 'form'
+
+    = render 'shared/footer'
