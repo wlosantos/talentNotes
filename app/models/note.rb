@@ -9,8 +9,8 @@ class Note < ApplicationRecord
 
   before_validation :date_published
 
-  def badge_color(selected)
-    case selected
+  def priority_color
+    case priority
     when 'low'
       'bg-secondary'
     when 'media'

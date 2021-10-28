@@ -8,8 +8,15 @@
           %h2.mb-0 #{ @note.title }
           %div.text-muted created on #{ @note.published.strftime('%d/%m/%Y') }
           .select-priority.d-flex.align-items-center
-            %small.mr-2 prioridade: 
-            %select{class: "#{@note.badge_color(@note.priority)}"}
+            .drop-priority
+              %small.mr-2 prioridade: 
+              .dropdown
+                %button.btn.btn-sm.btn-primary.dropdown-toggle{class: "#{@note.priority_color}", type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-exapanded': 'false'}
+                  #{ @note.priority }
+                .dropdown-menu
+                  - Note.priorities.each do |p|
+                    %a.dropdown-item{href: '#', 'data-reflex': 'click->PriorityReflex#change', 'data-id': "#{@note.id}", 'data-priority': "#{p[0]}"} #{p[0]}
+            -# %select{class: "#{@note.badge_color(@note.priority)}"}
               - if @note.priority === 'low'
                 %option{value: 'low', selected: true} baixa
                 %option media

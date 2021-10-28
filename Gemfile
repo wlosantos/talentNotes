@@ -46,3 +46,5 @@ end
 group :production do
   gem 'pg', '~> 1.1'
 end
+
+gem "stimulus_reflex", "~> 3.4"

@@ -3,8 +3,8 @@
     = link_to note, class: 'link-note' do
       .card-body
         .note-wrapper
-          %span.icon.bg-info.text-light
-            %i.fas.fa-paperclip
+          %span.icon.text-light{class: "#{note.priority_color}"}
+            %i.fas.fa-pen-nib
           .note-title
             %div #{ truncate(note.title, length: 30) }
             %span.text-muted
@@ -14,19 +14,11 @@
         .note-content.text-muted
           %span #{truncate(note.content, length: 80)}
 
-    .card-footer
-      %span Priority:
-      %select{class: "#{note.badge_color(note.priority)}"}
-        - if note.priority === 'low'
-          %option{value: 'low', selected: true} baixa
-          %option media
-          %option alta
-        - elsif note.priority === 'media'
-          %option baixa
-          %option{value: 'media', selected: true} media
-          %option alta
-        - else
-          %option baixa
-          %option media
-          %option{value: 'high', selected: true} alta
-
+    .card-footer.drop-priority
+      %span.mr-3 Priority:
+      .dropdown
+        %button.btn.btn-sm.btn-primary.dropdown-toggle{class: "#{note.priority_color}", type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-exapanded': 'false'}
+          #{ note.priority }
+        .dropdown-menu
+          - Note.priorities.each do |p|
+            %a.dropdown-item{href: '#', 'data-reflex': 'click->PriorityReflex#change', 'data-id': "#{note.id}", 'data-priority': "#{p[0]}"} #{p[0]}
