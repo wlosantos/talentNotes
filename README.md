@@ -13,10 +13,6 @@
 </ul>
 
 <hr />
-<p>
-	Link: 
-	<a href='https://talentnotes.herokuapp.com/' target='_blank'>Talent Notes</a>
-</p>
 
 ![](https://github.com/wlosantos/talentNotes/blob/master/app/assets/images/talentNotes.png)
 
